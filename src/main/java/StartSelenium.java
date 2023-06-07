@@ -1,4 +1,6 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -15,9 +17,34 @@ public class StartSelenium {
     @Test
     public void  test(){
 
+        wd.findElement(By.tagName("a"));
+        wd.findElement(By.cssSelector("a"));
+
+        wd.findElement(By.id("root"));
+        wd.findElement(By.cssSelector("#root"));
+
+        wd.findElement(By.className("container"));
+        wd.findElement(By.cssSelector(".container"));
+
+        wd.findElement(By.linkText("HOME"));
+        wd.findElement(By.partialLinkText("OM"));
+
+        wd.findElement(By.cssSelector("[href='/login']"));
+        wd.findElement(By.cssSelector("[href*='og']"));
+        wd.findElement(By.cssSelector("[href^='/log']"));
+        wd.findElement(By.cssSelector("[href$='gin']"));
+
+        wd.findElement(By.cssSelector("[href='/about']"));
+        wd.findElement(By.cssSelector("[href*='bo']"));
+        wd.findElement(By.cssSelector("[href^='/abo']"));
+        wd.findElement(By.cssSelector("[href$='ut']"));
+
+        WebElement f;
+        f=wd.findElement(By.cssSelector(".navbar-component_nav__1X_4m :nth-child(2)"));
+        System.out.println(f.getText());
     }
     @AfterTest
     public void postcondition(){
-
+    wd.quit();
     }
 }
