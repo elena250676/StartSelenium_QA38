@@ -33,21 +33,25 @@ public class StartSelenium {
         wd.findElement(By.linkText("HOME"));
         wd.findElement(By.partialLinkText("OM"));
         WebElement r;
-        r=wd.findElement(By.xpath("//a[@class='active']"));
+        //r=wd.findElement(By.xpath("//a[@class='active']"));
+        r=wd.findElement(By.xpath("//*[.='HOME']"));
         System.out.println(r.getText());
 
         WebElement f;
         wd.findElement(By.cssSelector("[href='/login']"));
-        f=wd.findElement(By.xpath("//*[@id=\"root\"]/div[1]/a[3]"));
+        //f=wd.findElement(By.xpath("//*[@id=\"root\"]/div[1]/a[3]"));
+        f=wd.findElement(By.xpath("//*[.='LOGIN']"));
         System.out.println(f.getText());
         wd.findElement(By.cssSelector("[href*='og']"));
         wd.findElement(By.cssSelector("[href^='/log']"));
         wd.findElement(By.cssSelector("[href$='gin']"));
 
 
-
-        wd.findElement(By.cssSelector("[href='/about']"));
-        wd.findElement(By.xpath("//*[@id=\"root\"]/div[1]/a[2]"));
+        WebElement y;
+        y=wd.findElement(By.cssSelector("[href='/about']"));
+        System.out.println(y.getText());
+        //wd.findElement(By.xpath("//*[@id=\"root\"]/div[1]/a[2]"));
+        wd.findElement(By.xpath("//*[.='ABOUT']"));
         wd.findElement(By.cssSelector("[href*='bo']"));
         wd.findElement(By.cssSelector("[href^='/abo']"));
         wd.findElement(By.cssSelector("[href$='ut']"));
