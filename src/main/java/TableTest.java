@@ -12,6 +12,7 @@ public class TableTest {
     public static void main(String[] args) {
 
     }
+
     WebDriver wd;
 
     @BeforeTest
@@ -25,7 +26,7 @@ public class TableTest {
         WebElement f;
         f = wd.findElement(By.cssSelector("#customers tr:nth-child(7) td:last-child"));
         System.out.println(f.getText());
-
+        wd.findElements(By.xpath("//*[@id=\"customers\"]/tbody/tr[7]/td[3]"));
 
         List<WebElement> rows = wd.findElements(By.cssSelector("#customers tr"));
         System.out.println(rows.size());
@@ -36,25 +37,18 @@ public class TableTest {
         WebElement q;
         q = wd.findElement(By.cssSelector("#customers tr:nth-child(3)"));
         System.out.println(q.getText());
+        wd.findElements(By.xpath("//*[@id=\"customers\"]/tbody/tr[3]"));
+        wd.findElement(By.cssSelector("#customers td:last-child"));
+        wd.findElements(By.xpath("//*[@id=\"customers\"]/tbody"));
 
-        WebElement t;
 
-        t = wd.findElement(By.cssSelector("#customers th:last-child"));
-        wd.findElement(By.cssSelector("#customers tr:nth-child(2) td:last-child"));
-        wd.findElement(By.cssSelector("#customers tr:nth-child(3) td:last-child"));
-        wd.findElement(By.cssSelector("#customers tr:nth-child(4) td:last-child"));
-        wd.findElement(By.cssSelector("#customers tr:nth-child(5) td:last-child"));
-        wd.findElement(By.cssSelector("#customers tr:nth-child(6) td:last-child"));
-        wd.findElement(By.cssSelector("#customers tr:nth-child(7) td:last-child"));
-        wd.findElement(By.cssSelector("#customers tr:nth-child(8) td:last-child"));
-        wd.findElement(By.cssSelector("#customers tr:nth-child(9) td:last-child"));
-        System.out.println(t.getText());
+
 
     }
 
     @AfterTest
-    public void  tearDown(){
-         wd.quit();
+    public void tearDown() {
+        wd.quit();
 
     }
 }
