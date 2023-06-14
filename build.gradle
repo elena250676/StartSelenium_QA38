@@ -5,10 +5,19 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
+
+
 repositories {
     mavenCentral()
 }
 
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+tasks.withType(Test) {
+    jvmArgs '-Dfile.encoding=UTF-8'
+}
 dependencies {
     implementation group: 'org.testng', name: 'testng', version: '7.4.0'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'

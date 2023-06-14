@@ -41,11 +41,13 @@ public class StartSelenium {
         wd.findElement(By.cssSelector("[href='/login']"));
         //f=wd.findElement(By.xpath("//*[@id=\"root\"]/div[1]/a[3]"));
         f=wd.findElement(By.xpath("//*[.='LOGIN']"));
+        //f=wd.findElement(By.xpath("//a[@href='/login']"));
         System.out.println(f.getText());
         wd.findElement(By.cssSelector("[href*='og']"));
         wd.findElement(By.cssSelector("[href^='/log']"));
         wd.findElement(By.cssSelector("[href$='gin']"));
-
+        wd.findElement(By.xpath("//a[contains (@href,'og')]"));
+        wd.findElement(By.xpath("//a[starts-with (@href,'/log')]"));
 
         WebElement y;
         y=wd.findElement(By.cssSelector("[href='/about']"));
